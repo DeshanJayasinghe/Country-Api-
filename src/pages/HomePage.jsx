@@ -41,27 +41,40 @@ export default function HomePage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-explorer-800 to-earth-800 text-white py-20">
-        <div className="container mx-auto px-4 text-center">
-          <div className="flex justify-center mb-6">
-            <Earth className="h-16 w-16 text-explorer-400" />
-          </div>
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">Explore Our World</h1>
-          <p className="text-xl md:text-2xl mb-10 max-w-2xl mx-auto text-gray-200">
-            Discover countries, cultures, and facts from around the globe with our interactive explorer
-          </p>
-          <div className="max-w-xl mx-auto">
-            <SearchBar className="mb-4" />
-            <div className="flex justify-center space-x-4">
+      <section className="relative bg-explorer-900 min-h-[85vh] flex items-center">
+        {/* Background image with gradient overlay */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src="https://images.unsplash.com/photo-1488085061387-422e29b40080"
+            alt="World Map"
+            className="w-full h-full object-cover opacity-30"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-explorer-900 via-explorer-900/90 to-explorer-900/80"></div>
+        </div>
+        
+        <div className="container mx-auto px-4 pt-16 relative z-10">
+          <div className="max-w-3xl">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+              Discover the World with GlobeTrotter
+            </h1>
+            <p className="text-xl text-gray-300 mb-8 max-w-2xl">
+              Explore countries, cultures and destinations from around the globe. Your next adventure is just a click away.
+            </p>
+            
+            <div className="max-w-xl mb-8">
+              <SearchBar className="w-full" />
+            </div>
+            
+            <div className="flex flex-wrap gap-3">
               <Link
                 to="/explore"
-                className="px-6 py-3 bg-white text-explorer-800 rounded-lg shadow hover:bg-gray-100 transition-colors"
+                className="px-6 py-3 rounded-full border border-white/20 text-white hover:bg-white/10 hover:text-white transition-colors"
               >
-                Start Exploring
+                All Countries
               </Link>
               <Link
                 to="/regions"
-                className="px-6 py-3 bg-explorer-600 text-white rounded-lg shadow hover:bg-explorer-700 transition-colors"
+                className="px-6 py-3 rounded-full border border-white/20 text-white hover:bg-white/10 hover:text-white transition-colors"
               >
                 Browse by Region
               </Link>
@@ -121,15 +134,15 @@ export default function HomePage() {
       </section>
 
       {/* Call to Action Section */}
-      <section className="py-16 bg-gradient-to-r from-earth-700 to-explorer-700 text-white">
+      <section className="py-16 bg-explorer-900 text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-6">Ready to Discover the World?</h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto">
+          <p className="text-xl mb-8 max-w-2xl mx-auto text-gray-300">
             Explore countries, learn about different cultures, and test your geography knowledge.
           </p>
           <Link
             to="/explore"
-            className="px-8 py-3 bg-white text-explorer-800 rounded-lg shadow hover:bg-gray-100 transition-colors inline-block"
+            className="px-8 py-3 rounded-full border border-white/20 text-white hover:bg-white/10 hover:text-white transition-colors inline-block"
           >
             Explore All Countries
           </Link>
